@@ -29,4 +29,15 @@ function relativeSortArray(arr1, arr2){
     return resultArray;
 }
 
-console.log(relativeSortArray([26,21,11,20,50,34,1,18], [21,11,26,20]));
+//console.log(relativeSortArray([26,21,11,20,50,34,1,18], [21,11,26,20]));
+
+function uncommonFromSentences(s1, s2){
+    let wordArray1 = s1.split(" ");
+    let wordArray2 = s2.split(" ");
+
+    for(let i = 0; i < wordArray1.length; i++){
+        for(let k = 0; k < wordArray2.length; k++){
+            
+        }
+    }
+}
