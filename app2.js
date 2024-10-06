@@ -179,7 +179,7 @@ function areSentencesSimilar(s1, s2){
         for(let i = 0; i < sentance1Array.length; i++){
         const index = sentance2Array.indexOf(sentance1Array[i]);
             if(index > -1){
-            resultArray.push(sentance2Array[index]);
+                resultArray.push(sentance2Array[index]);
             }
         }
 
@@ -221,6 +221,6 @@ function areSentencesSimilar(s1, s2){
     } 
 }
 
-console.log(areSentencesSimilar("of", "A lot of words"));
+//console.log(areSentencesSimilar("of", "A lot of words"));
 
 //(?=[abc]{3})(?=(?!((?<1>.)\k<1>.)))(?=(?!((?<2>.).\k<2>)))(?=(?!(.(?<3>.)\k<3>)))(?=(?!((?<4>.)\k<4>\k<4>)))[abc]{3}
