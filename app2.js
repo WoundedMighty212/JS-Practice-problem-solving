@@ -85,7 +85,7 @@ let RomanNumeralsArray = [
     }
 ]
 
-var romanToInt = function(s) {
+function romanToInt(s) {
     let RomanNumerals = {
         V: 5,
         X: 10,
@@ -163,3 +163,64 @@ var romanToInt = function(s) {
     }
 };
 
+
+function areSentencesSimilar(s1, s2){
+    let resultArray = [];
+    let sentance1 = s1.toLowerCase();
+    let sentance2 = s2.toLowerCase();
+
+    let sentance1Array = sentance1.split(" ");
+    let sentance2Array = sentance2.split(" ");
+
+    console.log(sentance1Array);
+    console.log(sentance2Array);
+
+    if(sentance1Array.length < sentance2Array.length){
+        for(let i = 0; i < sentance1Array.length; i++){
+        const index = sentance2Array.indexOf(sentance1Array[i]);
+            if(index > -1){
+            resultArray.push(sentance2Array[index]);
+            }
+        }
+
+        let winningCount = 0;
+        for(let i = 0; i < sentance1Array.length; i++){
+            if(resultArray[i] === sentance1Array[i]){
+                winningCount++;
+            }
+        }
+     
+        if(winningCount === sentance1Array.length){
+            return true;
+        }
+        else{
+            return false;
+        }
+     }
+     else if(sentance2Array.length < sentance1Array.length){
+        for(let i = 0; i < sentance2Array.length; i++){
+            const index = sentance1Array.indexOf(sentance2Array[i]);
+            if(index > -1){
+                resultArray.push(sentance1Array[index]);
+            }
+        }
+
+        let winningCount = 0;
+        for(let i = 0; i < sentance2Array.length; i++){
+            if(resultArray[i] === sentance2Array[i]){
+                winningCount++;
+            }
+        }
+     
+        if(winningCount === sentance2Array.length){
+            return true;
+        }
+        else{
+            return false;
+        }
+    } 
+}
+
+console.log(areSentencesSimilar("of", "A lot of words"));
+
+//(?=[abc]{3})(?=(?!((?<1>.)\k<1>.)))(?=(?!((?<2>.).\k<2>)))(?=(?!(.(?<3>.)\k<3>)))(?=(?!((?<4>.)\k<4>\k<4>)))[abc]{3}
